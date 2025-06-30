@@ -165,11 +165,29 @@ export default function Home() {
         Munyard Mixer
       </h1>
 
-      {showNotification && (
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-[#FCFAEE] text-[#B8001F] px-5 py-3 text-sm rounded-md shadow-md z-50 animate-fadeInOut">
-          ROTATE YOUR PHONE
-        </div>
-      )}
+{showNotification && (
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none">
+    <div className="bg-[#FCFAEE] text-[#B8001F] px-10 py-6 rounded-xl shadow-lg flex flex-col items-center text-center pointer-events-auto">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-16 h-16 mb-4 text-[#B8001F]"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4 4v5h.582M20 20v-5h-.581M4.582 9A7.5 7.5 0 0112 4.5c4.142 0 7.5 3.358 7.5 7.5M19.418 15A7.5 7.5 0 0112 19.5c-4.142 0-7.5-3.358-7.5-7.5"
+        />
+      </svg>
+      <p className="font-mono text-lg leading-snug">
+        ROTATE<br />YOUR<br />PHONE
+      </p>
+    </div>
+  </div>
+)}
 
       <div className="flex gap-4 justify-center mb-8 flex-wrap">
         <button onClick={playAll} className="pressable bg-[#B30000] text-white px-6 py-2 font-mono tracking-wide">Play</button>
